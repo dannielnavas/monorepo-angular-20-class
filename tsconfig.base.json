@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@monorepo-angular-20/ui-shared": ["packages/ui-shared/src/index.ts"]
+      "@monorepo-angular-20/ui-shared": ["packages/ui-shared/src/index.ts"],
+      "@monorepo-angular-20/utils-common": [
+        "packages/utils-common/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
