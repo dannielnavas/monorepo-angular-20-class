@@ -1,4 +1,9 @@
 {
+  "pluginsConfig": {
+    "@nx/js": {
+      "analyzeSourceFiles": true
+    }
+  },
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "nxCloudId": "68ee3e38ca41a66a3ff820b7",
@@ -38,6 +43,11 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["default", "^default"]
+    },
+    "@nx/esbuild:esbuild": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
     }
   },
   "generators": {
@@ -62,10 +72,5 @@
         "targetName": "eslint:lint"
       }
     }
-  ],
-  "pluginsConfig": {
-    "@nx/js": {
-      "analyzeSourceFiles": true
-    }
-  }
+  ]
 }

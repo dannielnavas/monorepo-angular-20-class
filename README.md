@@ -111,3 +111,11 @@ npx nx g @nx/js:lib packages/utils-common --bundler=tsc --linter=eslint --unitTe
 ### Graph dependencies
 
 npx nx graph
+
+### add node
+
+npx nx add @nx/node
+
+### crear app backend
+
+npx nx g @nx/node:application packages/server
