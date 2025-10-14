@@ -10,7 +10,6 @@
 
 [Click here to finish setting up your workspace!](https://cloud.nx.app/connect/YjVGMpyHT5)
 
-
 ## Run tasks
 
 To run tasks with Nx use:
@@ -46,6 +45,7 @@ Pass `--dry-run` to see what would happen without actually releasing the library
 While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
 
 To install a new plugin you can use the `nx add` command. Here's an example of adding the React plugin:
+
 ```sh
 npx nx add @nx/react
 ```
@@ -63,7 +63,6 @@ npx nx g @nx/react:lib some-lib
 You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
 
 [Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
 
 [Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
@@ -83,7 +82,32 @@ Learn more:
 - [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
 And join the Nx community:
+
 - [Discord](https://go.nx.dev/community)
 - [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
 - [Our Youtube channel](https://www.youtube.com/@nxdevtools)
 - [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## Sciential commands
+
+### Start project
+
+npx create-nx-workspace@latest monorepo-angular-20 --preset=npm
+
+### add angular
+
+pnpx nx add @nx/angular
+
+### create app
+
+npx nx g @nx/angular:application packages/app1 --standalone --routing --style=css
+npx nx g @nx/angular:application packages/app2 --standalone --routing --style=css
+
+### Create library
+
+npx nx g @nx/angular:library packages/ui-shared --standalone
+npx nx g @nx/js:lib packages/utils-common --bundler=tsc --linter=eslint --unitTestRunner=jest
+
+### Graph dependencies
+
+npx nx graph
