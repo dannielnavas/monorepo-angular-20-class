@@ -23,9 +23,9 @@ export interface TableAction {
 
   imports: [],
 
-  templateUrl: './table.component.html',
+  templateUrl: './table.html',
 
-  styleUrl: './table.component.css',
+  styleUrl: './table.css',
 })
 export class TableComponent {
   @Input({ required: true }) data: any[] = [];
