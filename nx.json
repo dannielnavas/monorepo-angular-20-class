@@ -65,6 +65,43 @@
       "style": "css"
     }
   },
+  "projects": {
+    "app1": { "tags": ["scope:app"] },
+
+    "app2": { "tags": ["scope:app"] },
+
+    "ui-shared": { "tags": ["scope:lib"] },
+
+    "utils-common": { "tags": ["scope:utils"] },
+
+    "server": { "tags": ["scope:server"] }
+  },
+
+  "dependencyConstraints": [
+    {
+      "sourceTag": "scope:utils",
+
+      "onlyDependOnLibsWithTags": ["scope:utils"]
+    },
+
+    {
+      "sourceTag": "scope:lib",
+
+      "onlyDependOnLibsWithTags": ["scope:utils", "scope:lib"]
+    },
+
+    {
+      "sourceTag": "scope:server",
+
+      "onlyDependOnLibsWithTags": ["scope:utils"]
+    },
+
+    {
+      "sourceTag": "scope:app",
+
+      "onlyDependOnLibsWithTags": ["scope:utils", "scope:lib", "scope:server"]
+    }
+  ],
   "plugins": [
     {
       "plugin": "@nx/eslint/plugin",
